@@ -26,7 +26,7 @@ function renderBooks() {
     const card = document.createElement("div");
     card.className = "card";
 
-    let colorClass =
+    let color =
       book.status === "Read" ? "green" :
       book.status === "Reading" ? "blue" : "yellow";
 
@@ -34,7 +34,7 @@ function renderBooks() {
       <h3>${book.title}</h3>
       <p>${book.author}</p>
       <p>${book.genre || ""}</p>
-      <span class="badge ${colorClass}">${book.status}</span>
+      <span class="badge ${color}">${book.status}</span>
       <br><br>
       <button onclick="editBook(${index})">Edit</button>
       <button onclick="deleteBook(${index})">Delete</button>
@@ -116,3 +116,6 @@ document.getElementById("search").addEventListener("input", renderBooks);
 document.getElementById("filter").addEventListener("change", renderBooks);
 
 renderBooks();
+
+  
+
