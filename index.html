@@ -1,27 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Recipe Finder</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Book Tracker</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <h1>🍽️ Recipe Finder</h1>
-    <input type="text" id="search" placeholder="Search recipes...">
+  <h1>📚 Book Tracker</h1>
+
+  <div class="stats">
+    <span>Total: <b id="total"></b></span>
+    <span class="green">Read: <b id="read"></b></span>
+    <span class="blue">Reading: <b id="reading"></b></span>
+    <span class="yellow">Want: <b id="want"></b></span>
+  </div>
+
+  <div class="controls">
+    <input type="text" id="search" placeholder="Search by title or author...">
+
+    <select id="filter">
+      <option value="all">All</option>
+      <option value="Read">Read</option>
+      <option value="Reading">Reading</option>
+      <option value="Want">Want to Read</option>
+    </select>
+
+    <button onclick="openForm()">+ Add Book</button>
+  </div>
 </header>
 
-<section id="filters">
-    <button onclick="filterCategory('All')">All</button>
-    <button onclick="filterCategory('Breakfast')">Breakfast</button>
-    <button onclick="filterCategory('Lunch')">Lunch</button>
-    <button onclick="filterCategory('Dinner')">Dinner</button>
-</section>
+<main id="bookGrid"></main>
 
-<section id="recipes"></section>
+<p id="emptyState">No books added yet 📭</p>
 
-<h2>❤️ Favorites</h2>
-<section id="favorites"></section>
+<!-- Modal Form -->
+<div id="formModal" class="modal">
+  <form id="bookForm">
+    <h2 id="formTitle">Add Book</h2>
+
+    <input type="text" id="title" placeholder="Title" required>
+    <input type="text" id="author" placeholder="Author" required>
+    <input type="text" id="genre" placeholder="Genre">
+    <input type="number" id="pages" placeholder="Total Pages">
+
+    <select id="status">
+      <option value="Read">Read</option>
+      <option value="Reading">Reading</option>
+      <option value="Want">Want to Read</option>
+    </select>
+
+    <button type="submit">Save</button>
+    <button type="button" onclick="closeForm()">Cancel</button>
+  </form>
+</div>
 
 <script src="script.js"></script>
 </body>
