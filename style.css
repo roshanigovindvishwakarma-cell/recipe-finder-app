@@ -5,8 +5,8 @@ body {
 }
 
 header {
-  padding: 20px;
   background: white;
+  padding: 20px;
 }
 
 .stats span {
@@ -40,9 +40,9 @@ button {
   color: white;
 }
 
-.green { background: green; color: white; }
-.blue { background: blue; color: white; }
-.yellow { background: goldenrod; color: white; }
+.green { background: green; }
+.blue { background: blue; }
+.yellow { background: goldenrod; }
 
 .modal {
   display: none;
@@ -68,4 +68,4 @@ button {
   text-align: center;
   display: none;
 }
-
+ 
